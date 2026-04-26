@@ -142,6 +142,10 @@ Use testnet keys and small sizes when experimenting.
 - **TypeScript:** `npx tsc --noEmit` for typecheck; `npm test` for tests.
 - **Python:** `uv run …` as above; see `AGENTS.md` / `CLAUDE.md` for repository conventions if you contribute.
 
+### Publishing to `PolyPulse-Analytics` (maintainers)
+
+To create the GitHub org repository, set metadata (description, [Hyperliquid](https://hyperliquid.xyz) homepage, topics), and push `main`, use `scripts/publish-to-polypulse.ps1`. You need a [personal access token](https://github.com/settings/tokens) with permission to create repositories in the org. **Do not** commit tokens. In PowerShell, set `GITHUB_TOKEN` for the current session only, then run the script from the repository root. Revoke any token that was exposed (e.g. in chat or logs).
+
 ---
 
 ## License and disclaimer
