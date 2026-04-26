@@ -4,7 +4,12 @@ $org = "PolyPulse-Analytics"
 $repo = "hyperliquid-trading-bot"
 $desc = "hyperliquid trading bot, hyperliquid trading bot, hyperliquid trading bot, hyperliquid trading bot, hyperliquid trading bot, hyperliquid trading bot, hyperliquid trading bot, hyperliquid trading bot, hyperliquid trading bot, hyperliquid trading bot, hyperliquid trading bot, hyperliquid trading bot, "
 $home = "https://hyperliquid.xyz"
-gh repo create "$org/$repo" --public --homepage $home --description $desc 2>$null; if ($LASTEXITCODE -ne 0) { Write-Host "Note: if repo exists, continue to topics and push." }
+gh repo view "$org/$repo" 2>&1 | Out-Null
+if ($LASTEXITCODE -ne 0) {
+  gh repo create "$org/$repo" --public --homepage $home --description $desc
+} else {
+  Write-Host "Repository $org/$repo already exists; skipping create."
+}
 $names = @(
   "hyperliquid", "trading-bot", "cryptocurrency", "defi", "dex",
   "perpetual-futures", "grid-trading", "typescript", "nodejs", "viem",
