@@ -11,9 +11,11 @@ Follow test driven development.
 
 ## Package Management
 
-Use UV package manager for all commands in this repo:
+**Primary trading bot (TypeScript/Node):** use npm: `npm install`, `npm start`, `npm test`, `npm run validate`.
+
+**Python (legacy `src/` and `learning_examples/`):** use UV:
 - `uv sync` - Install/sync dependencies
-- `uv add <package>` - Add new dependencies  
+- `uv add <package>` - Add new dependencies
 - `uv run <command>` - Run commands in the virtual environment
 - `uv run <script>` - Run Python scripts
 
@@ -31,10 +33,15 @@ The codebase follows SOLID principles without overcomplicating the implementatio
 ## Repository Structure
 
 ```
-├── bots/                          # Bot configurations (YAML files)
-│   └── btc_conservative.yaml      # Conservative BTC grid strategy
-├── src/                           # Source code
-│   ├── run_bot.py                # Main bot runner (auto-discovers config)
+├── bots/                          # Bot configurations (YAML)
+│   └── btc_conservative.yaml
+├── ts/src/                        # TypeScript/Node.js bot (primary)
+│   ├── runBot.ts                 # Main bot runner
+│   ├── core/                     # Engine, risk, keys
+│   ├── exchanges/hyperliquid/   # Info + exchange clients, WebSocket
+│   └── strategies/grid/         # Basic grid
+├── src/                           # Legacy Python source
+│   ├── run_bot.py                # Python bot runner
 │   ├── core/                     # Core engine components
 │   │   ├── engine.py             # Main trading engine
 │   │   ├── enhanced_config.py    # Configuration management
@@ -83,15 +90,16 @@ Each configuration includes:
 
 ## Running the System
 
-**Simple Bot Execution:**
+**TypeScript bot (default):**
 ```bash
-# Auto-discover and run first active config
+npm start
+npx tsx ts/src/runBot.ts bots/btc_conservative.yaml
+npm run validate
+```
+
+**Python (legacy):**
+```bash
 uv run src/run_bot.py
-
-# Run specific config
-uv run src/run_bot.py bots/btc_conservative.yaml
-
-# Validate configuration only
 uv run src/run_bot.py --validate
 ```
 
@@ -168,11 +176,9 @@ uv run learning_examples/06_copy_trading/mirror_spot_orders.py
 
 ## Key Dependencies
 
-- `hyperliquid-python-sdk>=0.20.0` - Main SDK for Hyperliquid integration
-- `eth-account>=0.10.0` - Ethereum account management and signing
-- `websockets` - Real-time WebSocket connections
-- `pyyaml` - YAML configuration parsing
-- `python-dotenv` - Environment variable management
+**Node.js (main bot):** `@nktkas/hyperliquid`, `viem`, `js-yaml`, `dotenv`, `ws`
+
+**Python (legacy):** `hyperliquid-python-sdk`, `eth-account`, `websockets`, `pyyaml`, `python-dotenv`
 
 ## API Configuration
 
