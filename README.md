@@ -1,6 +1,6 @@
 # Hyperliquid grid trading bot
 
-**Repository:** [github.com/PolyPulse-Analytics/hyperliquid-trading-bot](https://github.com/PolyPulse-Analytics/hyperliquid-trading-bot)
+**Repository:** [https://github.com/PolyPulse-Analytics/hyperliquid-trading-bot](https://github.com/PolyPulse-Analytics/hyperliquid-trading-bot)
 
 A configurable grid strategy runner for [Hyperliquid](https://hyperliquid.xyz). It places layered buy and sell orders around a price range and supports basic risk rules (stop loss, take profit, drawdown limits, and rebalancing). The main implementation is **TypeScript on Node.js**; a legacy **Python** tree remains for reference and scripts.
 
@@ -27,7 +27,7 @@ Follow these steps in order.
 **1. Clone and install dependencies**
 
 ```bash
-git clone https://github.com/PolyPulse-Analytics/hyperliquid-trading-bot
+git clone https://github.com/PolyPulse-Analytics/hyperliquid-trading-bot.git
 cd hyperliquid-trading-bot
 npm install
 ```
