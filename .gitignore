@@ -1,95 +1,28 @@
-# Node
-node_modules/
-
-# Python-generated files
-__pycache__/
-*.py[oc]
-build/
-dist/
-wheels/
-*.egg-info
-
-# Virtual environments
-.venv/
-venv/
-env/
-
-# Environment and configuration files
+# Environment & secrets
 .env
 .env.local
-.env.production
-.env.development
+.env.*.local
 
-# Private keys and secrets
-.private_key
-*.key
-*.pem
-private_keys/
-secrets/
+# Dependencies
+node_modules/
 
-# Trading data and logs
-data/
-logs/
+# Logs
 *.log
-*.csv
-trade_history/
-performance_data/
+bot.log*
 
-# Bot state and cache files
-state/
-cache/
-*.json.backup
-*_state.json
-*_backup.json
+# Build output
+dist/
+build/
 
-# Temporary files
-tmp/
-temp/
-*.tmp
-*.swp
-*.swo
-*~
-
-# IDE and editor files
-.vscode/
-.idea/
-*.sublime-*
+# OS
 .DS_Store
 Thumbs.db
 
-# OS-specific files
-*.DS_Store
-*.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+# Editor
+.idea/
+*.swp
+*.swo
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pytest
-.pytest_cache/
-.coverage
-htmlcov/
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Profiling data
-.prof
-
-# Database files
-*.db
-*.sqlite
-*.sqlite3
-
-# Backup files
-*.bak
-*~
-
-COPY_TRAD_SPEC.md
-articles
+# Analysis output (raw data dumps, not source)
+out/
+first_line.json
