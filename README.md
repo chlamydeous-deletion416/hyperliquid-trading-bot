@@ -1,6 +1,6 @@
 # Hyperliquid grid trading bot
 
-**Repository:** [https://github.com/PolyPulse-Analytics/hyperliquid-trading-bot](https://github.com/PolyPulse-Analytics/hyperliquid-trading-bot)
+**Repository:** [https://github.com/SigmaTradeLabs/hyperliquid-trading-bot](https://github.com/SigmaTradeLabs/hyperliquid-trading-bot)
 
 A configurable grid strategy runner for [Hyperliquid](https://hyperliquid.xyz). It places layered buy and sell orders around a price range and supports basic risk rules (stop loss, take profit, drawdown limits, and rebalancing). The main implementation is **TypeScript on Node.js**; a legacy **Python** tree remains for reference and scripts.
 
@@ -27,7 +27,7 @@ Follow these steps in order.
 **1. Clone and install dependencies**
 
 ```bash
-git clone https://github.com/PolyPulse-Analytics/hyperliquid-trading-bot.git
+git clone https://github.com/SigmaTradeLabs/hyperliquid-trading-bot.git
 cd hyperliquid-trading-bot
 npm install
 ```
@@ -142,7 +142,7 @@ Use testnet keys and small sizes when experimenting.
 - **TypeScript:** `npx tsc --noEmit` for typecheck; `npm test` for tests.
 - **Python:** `uv run …` as above; see `AGENTS.md` / `CLAUDE.md` for repository conventions if you contribute.
 
-### Publishing to `PolyPulse-Analytics` (maintainers)
+### Publishing to `SigmaTradeLabs` (maintainers)
 
 To create the GitHub org repository, set metadata (description, [Hyperliquid](https://hyperliquid.xyz) homepage, topics), and push `main`, use `scripts/publish-to-polypulse.ps1`. You need a [personal access token](https://github.com/settings/tokens) with permission to create repositories in the org. **Do not** commit tokens. In PowerShell, set `GITHUB_TOKEN` for the current session only, then run the script from the repository root. Revoke any token that was exposed (e.g. in chat or logs).
 
