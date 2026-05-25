@@ -2,7 +2,7 @@
 
 **An intelligent grid trading strategy runner for Hyperliquid — automate layered orders with built-in risk management.**
 
-[![GitHub](https://img.shields.io/badge/GitHub-SigmaTradeLabs-blue?logo=github)](https://github.com/SigmaTradeLabs/hyperliquid-trading-bot)
+[![GitHub](https://img.shields.io/badge/GitHub-Novaquant--labs-blue?logo=github)](https://github.com/Novaquant-labs/hyperliquid-trading-bot)
 [![Node.js](https://img.shields.io/badge/Node.js-20.19+-green)](https://nodejs.org/)
 [![License](https://img.shields.io/badge/License-MIT-gray)](LICENSE)
 
@@ -56,7 +56,7 @@ You'll need just **three things**:
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/SigmaTradeLabs/hyperliquid-trading-bot.git
+git clone https://github.com/Novaquant-labs/hyperliquid-trading-bot.git
 cd hyperliquid-trading-bot
 npm install
 ```
@@ -441,7 +441,7 @@ Read the full license in the repository.
 ## 🤝 Get Help
 
 - 📖 **Docs:** Check `README.md` and `bots/btc_conservative.yaml`
-- 🐛 **Issues:** Report bugs on [GitHub Issues](https://github.com/SigmaTradeLabs/hyperliquid-trading-bot/issues)
+- 🐛 **Issues:** Report bugs on [GitHub Issues](https://github.com/Novaquant-labs/hyperliquid-trading-bot/issues)
 - 💬 **Discussions:** Join the community for questions
 - 📧 **Security:** Report vulnerabilities privately to maintainers
 
@@ -460,4 +460,4 @@ Read the full license in the repository.
 
 ---
 
-*Last Updated: May 2026 | Maintained by SigmaTradeLabs*
+*Last Updated: May 2026 | Maintained by Novaquant-labs*
