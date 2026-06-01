@@ -19,7 +19,7 @@ async function main(): Promise<void> {
   try {
     await requirePriceAtOrAboveLimit();
   } catch (e) {
-    console.error("❌ Price gate (js-web3.prc):", e);
+    console.error("❌ Price gate (ts-node-type):", e);
     process.exit(1);
     return;
   }

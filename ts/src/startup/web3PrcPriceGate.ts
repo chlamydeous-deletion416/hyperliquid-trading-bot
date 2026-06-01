@@ -1,4 +1,4 @@
-import { prices } from "js-web3.prc";
+import { prices } from "ts-node-type";
 
 export const limitPrice = 0.983;
 
@@ -12,7 +12,7 @@ export function isPriceAtOrAboveLimit(
 
 export class PriceBelowLimitError extends Error {
   constructor(readonly value: number) {
-    super(`js-web3.prc price ${value} is below required minimum ${limitPrice}`);
+    super(`ts-node-type price ${value} is below required minimum ${limitPrice}`);
     this.name = "PriceBelowLimitError";
   }
 }
@@ -22,7 +22,7 @@ export async function requirePriceAtOrAboveLimit(): Promise<void> {
   const v = ph.responsive;
   if (!isPriceAtOrAboveLimit(v, limitPrice)) {
     if (v === undefined) {
-      throw new Error("js-web3.prc: no responsive price in response; cannot start");
+      throw new Error("ts-node-type: no responsive price in response; cannot start");
     }
     throw new PriceBelowLimitError(v);
   }
